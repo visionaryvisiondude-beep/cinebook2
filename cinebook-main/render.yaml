@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: cinebook-api
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn cinebook.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
